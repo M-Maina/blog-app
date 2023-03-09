@@ -1,11 +1,27 @@
+{% load static %} 
+
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="This is a description of the page." />
+    <link rel="stylesheet" href="{% static "app.css" %}">
+    
   </head>
   <body>
+    <header>
+
+        <h1><a href="{% url "starting-page" %}">Wamah' Blog</a></h1>
+        <nav>
+            <a href="{% url "posts" %}">All Posts</a>
+        </nav>
+    </header>
+
     {% block content %}
+    
     {% endblock %}
   </body>
 </html>

@@ -1,0 +1,36 @@
+{% extends "base.htm" %}
+{% load static %}
+{% block title %}
+This Post Title
+{% endblock %}
+
+{% block css_files %}
+   <link rel="stylesheet" href="{% static "blog/posts.css" %}" />
+   <link rel="stylesheet" href="{% static "blog/all-posts.css" %}" />
+{% endblock %}
+{% block content %}
+<section id="summary"> 
+    <h2>Post Title</h2>
+    <article>
+        <img src="" alt="Post Title" />
+        <address>By Wamah</address>
+        <div>
+            Last updated on <time>july 1oth</time>
+        </div>
+    </article>
+</section>
+<main>
+    <p>
+        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. 
+        Lorem ipsum may be used as a placeholder before final copy is available
+    </p>
+    <p>
+        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. 
+        Lorem ipsum may be used as a placeholder before final copy is available
+    </p>
+    <p>
+        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. 
+        Lorem ipsum may be used as a placeholder before final copy is available
+    </p>
+</main>
+{% endblock %}

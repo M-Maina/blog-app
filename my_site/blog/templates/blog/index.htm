@@ -1,22 +1,19 @@
 {% extends "base.htm" %}
-
+{% load static %}
 
 {% block title %}
 My Blog
+{% endblock %}
 
+{% block css_files %}
+   <link rel="stylesheet" href="{% static "blog/index.css" %}" />
 {% endblock %}
 {% block content %}
-<header>
 
-    <h1><a href="http:"">Wamah' Blog</a></h1>
-    <nav>
-        <a href="http:"">All Posts</a>
-    </nav>
-</header>
 
 <section id="welcome">
     <header>
-        <img src="" alt="Wamah - The Author Of This Blog" />
+        <img src="{% static "blog/images/FB.jpg" %}" alt="Wamah - The Author Of This Blog" />
         <h2>WAMAH'S BLOG</h2>
     </header>
     <p> Hi, I am Wamah and I love to blog about tech and the world!</p>
@@ -26,18 +23,7 @@ My Blog
     <h2>My Latest Thoughts</h2>
 
     <ul>
-        <li>
-            <article class="post">
-                <a href="">
-                    <img src="" alt="Mountain Hiking"/>
-                    <div class="post_content">
-                        <h3>Mountain Hiking</h3>
-                        <p>There is nothing like the views you get when hiking in the mountains!
-                        And I wasn't even prepared for what happened whilst i was enjoying the view!</p>
-                    </div>
-                </a>        
-            </article>
-        </li>
+        {% include "blog/includes/post.htm" %}
     </ul>
 </section>
 
