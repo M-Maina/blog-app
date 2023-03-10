@@ -1,7 +1,7 @@
 {% extends "base.htm" %}
 {% load static %}
 {% block title %}
-This Post Title
+{{post.title}}
 {% endblock %}
 
 {% block css_files %}
@@ -10,7 +10,7 @@ This Post Title
 {% endblock %}
 {% block content %}
 <section id="summary"> 
-    <h2>Post Title</h2>
+    <h2>{{post.title}}</h2>
     <article>
         <img src="" alt="Post Title" />
         <address>By Wamah</address>
@@ -20,17 +20,6 @@ This Post Title
     </article>
 </section>
 <main>
-    <p>
-        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. 
-        Lorem ipsum may be used as a placeholder before final copy is available
-    </p>
-    <p>
-        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. 
-        Lorem ipsum may be used as a placeholder before final copy is available
-    </p>
-    <p>
-        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. 
-        Lorem ipsum may be used as a placeholder before final copy is available
-    </p>
+    {{post.content | linebreaks}}
 </main>
 {% endblock %}

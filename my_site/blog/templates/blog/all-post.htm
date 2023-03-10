@@ -11,15 +11,11 @@ All My Posts
 {% block content %}
 <section id="all-posts"> 
     <h2>My Collected Posts</h2>
-
+    
     <ul>
+        {% for post in all_posts %}
         {% include "blog/includes/post.htm" %}
-        {% include "blog/includes/post.htm" %}
-        {% include "blog/includes/post.htm" %}
-        {% include "blog/includes/post.htm" %}
-        {% include "blog/includes/post.htm" %}
-        {% include "blog/includes/post.htm" %}
-        {% include "blog/includes/post.htm" %}
+        {% endfor %}
     </ul>
 </section>
 {% endblock %}

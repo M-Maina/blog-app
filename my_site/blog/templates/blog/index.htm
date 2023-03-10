@@ -13,7 +13,7 @@ My Blog
 
 <section id="welcome">
     <header>
-        <img src="{% static "blog/images/FB.jpg" %}" alt="Wamah - The Author Of This Blog" />
+        <img src="" alt="Wamah - The Author Of This Blog" />
         <h2>WAMAH'S BLOG</h2>
     </header>
     <p> Hi, I am Wamah and I love to blog about tech and the world!</p>
@@ -23,7 +23,9 @@ My Blog
     <h2>My Latest Thoughts</h2>
 
     <ul>
-        {% include "blog/includes/post.htm" %}
+        {% for post in posts %}
+        <h3>{{ post.title }}</h3>
+        {% endfor %}
     </ul>
 </section>
 
