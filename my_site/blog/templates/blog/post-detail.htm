@@ -11,9 +11,13 @@
 {% block content %}
 <section id="summary"> 
     <h2>{{post.title}}</h2>
+    <div>
+        {% for tag in post_tags %}
+        <span>{{ tag.captions }}</span>
+        {% endfor %}
+    </div>
     <article>
-        <address>By {{post.author}}</address>
-        <p>{{post.tags}}</p>
+        <address>By <a href="mailto:{{ post.author.email_address }}" >{{post.author}}</a></address>
         <div>
             Last updated on <time>{{post.date}}</time>
         </div>
