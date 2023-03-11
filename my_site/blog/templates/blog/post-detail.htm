@@ -12,10 +12,10 @@
 <section id="summary"> 
     <h2>{{post.title}}</h2>
     <article>
-        <img src="" alt="Post Title" />
-        <address>By Wamah</address>
+        <address>By {{post.author}}</address>
+        <p>{{post.tags}}</p>
         <div>
-            Last updated on <time>july 1oth</time>
+            Last updated on <time>{{post.date}}</time>
         </div>
     </article>
 </section>

@@ -16,25 +16,16 @@ My Blog
         <img src="" alt="Wamah - The Author Of This Blog" />
         <h2>WAMAH'S BLOG</h2>
     </header>
-    <p> Hi, I am Wamah and I love to blog about tech and the world!</p>
 </section>
 
 <section id="latest-posts">
     <h2>My Latest Thoughts</h2>
 
     <ul>
-        {% for post in posts %}
+        {% for post in latest_posts %}
         <h3>{{ post.title }}</h3>
         {% endfor %}
     </ul>
-</section>
-
-<section id="about">
-    <h2>What I Do</h2>
-    <p>I love programming, i love to help others and i enjoy exploring new technologies in general</p>
-
-    <p>My goal is to keep growing as a developer and if i could help you do the same, I'd very happy!</p>
-
 </section>
 
 
