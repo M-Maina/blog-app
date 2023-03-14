@@ -1,5 +1,6 @@
 
 from pathlib import Path
+from os import getenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,9 +13,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@0_kc$(lf!z_^1yaxh0uh%7ece1y=t^p&19lr7#@=4#jt0(_94'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = getenv("IS_DEVELOPMENT", True)
 
-ALLOWED_HOSTS = [domain_to_host_on]
+ALLOWED_HOSTS = [
+    getenv("APP_HOST")
+    ]
 
 
 # Application definition
@@ -68,11 +71,21 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+        'USER':"djangoblog",
+        'PASSWORD': 'test',
+        'HOST': 'locahost',
+        'PORT': '5432'
+        }
+}
+
+#FOR POSTGRESQL
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -126,3 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #RUN python manage.py collectstatic for collecting static and files
+#when working with postgress install => pip install psycopg2-binary
